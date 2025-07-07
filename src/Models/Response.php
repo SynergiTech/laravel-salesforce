@@ -23,7 +23,7 @@ class Response
     /**
      * @param string|array<string, mixed> $rawResponse
      */
-    public function __construct(protected string $query, string|array $rawResponse, int $currentPage = null)
+    public function __construct(protected string $query, string|array $rawResponse, ?int $currentPage = null)
     {
         if (is_string($rawResponse)) {
             throw new InvalidResponseException('String response received - expected an array');
