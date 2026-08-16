@@ -8,12 +8,12 @@
     ],
     "require": {
         "php": "^8.3",
-        "illuminate/collections": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
-        "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+        "illuminate/collections": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11",
         "omniphx/forrest": "^2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
         "php-parallel-lint/php-parallel-lint": "^1.3",
         "phpstan/phpstan": "^1",
         "phpunit/phpunit": "^10.0 || ^11.0",
@@ -22,6 +22,17 @@
     "autoload": {
         "psr-4": {
             "SynergiTech\\Salesforce\\": "src/"
+        }
+    },
+    "config": {
+        "policy": {
+            "advisories": {
+                "ignore-id": {
+                    "PKSA-m5cs-t1y6-qpcs": "you can install whichever laravel version you want to",
+                    "PKSA-3r5d-mb8f-1qw9": "you can install whichever laravel version you want to",
+                    "PKSA-mdq4-51ck-6kdq": "you can install whichever laravel version you want to"
+                }
+            }
         }
     },
     "extra": {
