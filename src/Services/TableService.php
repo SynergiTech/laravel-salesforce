@@ -201,12 +201,12 @@ class TableService extends Builder
     }
 
     /**
-     * @return stdClass{errorCode:string, message:string}
+     * @return object{errorCode:string,message:string}
      */
-    protected function decodeError(SalesforceException $ex): stdClass
+    protected function decodeError(SalesforceException $ex)
     {
         $message = $ex->getMessage();
-        /** @var array<mixed>|false $errors */
+        /** @var array<object{errorCode:string,message:string}>|false $errors */
         $errors = json_decode($message);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
@@ -217,7 +217,6 @@ class TableService extends Builder
             throw $ex;
         }
 
-        /** @var stdClass{errorCode:string, message:string} $error */
         return $errors[0];
     }
 
