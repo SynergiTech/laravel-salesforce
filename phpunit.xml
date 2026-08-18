@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticProperties="false"
+<phpunit
          bootstrap="vendor/autoload.php"
+         cacheDirectory=".phpunit.cache"
          colors="true"
-         processIsolation="false"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
-         stopOnFailure="false"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
 >
     <testsuites>
-        <testsuite name="alert-package-tests">
-            <directory suffix="Test.php">./tests</directory>
+        <testsuite name="default">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <coverage>
@@ -19,9 +17,9 @@
             <text outputFile="php://stdout"/>
         </report>
     </coverage>
-    <source>
+    <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory>src</directory>
         </include>
     </source>
 </phpunit>
